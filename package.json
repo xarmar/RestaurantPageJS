@@ -1,0 +1,23 @@
+{
+  "name": "restaurantpagejs",
+  "version": "1.0.0",
+  "description": "Using JavaScript alone to generate the entire contents of the website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xarmar/RestaurantPageJS.git"
+  },
+  "author": "Xavier Marques",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xarmar/RestaurantPageJS/issues"
+  },
+  "homepage": "https://github.com/xarmar/RestaurantPageJS#readme",
+  "devDependencies": {
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2"
+  }
+}
