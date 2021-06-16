@@ -8,30 +8,63 @@ $retro-blue: rgba(66, 6, 241, 0.8);
 
 body {
     background: url('./cocktail.jpg');
+    background-repeat: repeat-y;
     background-position: center;
-    background-size: auto;
-    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@mixin centerEverything {
+    margin: 0px auto 0px auto;
+    text-align: center;
 }
 
 header {
-    background-color: $retro-purple;
+    @include centerEverything();
+    padding: 2rem;
     width: 90%;
-    margin: 0px auto 0px auto;
-    padding: 40px;
-    text-align: center;
+    background-color: $retro-purple;
+    border-bottom: $retro-violet 4px solid;
 }
 
 // Navigation Bar
 .menu {
-    padding: 2px;
     font-size: 20px;
     color: white;
     display: inline;
     list-style-type: none;
     margin: 0px 8% 0px 8%;
+    padding: 1px;
+    border: 1px solid transparent;
     &:hover {
         color: $retro-magenta;
         cursor: pointer;
+        border-top: 2px solid $retro-magenta;
+        border-bottom: 2px solid $retro-magenta;
+
     }
 }
 
+#content {
+    @include centerEverything();
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-rows: auto;
+    width: 90%;
+    background-color: $retro-purple;
+}
+
+.menuItem {
+    padding: 2rem;
+    margin: 1%;
+    border: 2px solid $retro-violet;
+    h3, p{
+        @include centerEverything();
+        color: white;
+        margin-bottom: 2px;
+        width: 60%;
+    }
+}
+
+.ingredients {
+    text-style: italic;
+}
