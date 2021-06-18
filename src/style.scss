@@ -28,6 +28,7 @@ header {
 
 // Navigation Bar
 .menu {
+    font-family: 'Chakra Petch', sans-serif;
     font-size: 20px;
     color: white;
     display: inline;
@@ -44,13 +45,17 @@ header {
     }
 }
 
+// Content 
 #content {
     @include centerEverything();
+    background-color: $retro-purple;
+    font-family: 'Electrolize', sans-serif;
+    width: 90%;
+    background-color: $retro-purple;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-template-rows: auto;
-    width: 90%;
-    background-color: $retro-purple;
+    margin-top: 2vh;
 }
 
 .menuItem {
@@ -63,8 +68,22 @@ header {
         margin-bottom: 2px;
         width: 60%;
     }
-}
-
-.ingredients {
-    text-style: italic;
+    p {
+        margin-top: 15px;
+    }
+    .drinkImage {
+        height: 200px;
+        width: 200px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .description {
+        padding: 10px;
+        background-color: $retro-blue;
+    }
+    .price {
+        margin-top:20px;
+        font-size: 200%;
+        color: $retro-yellow;
+    }
 }
