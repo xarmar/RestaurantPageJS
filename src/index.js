@@ -1,6 +1,12 @@
 import "./style.scss";
 import { populateMenu } from '/src/menu.js';
+import { populateHome } from '/src/home.js';
 
+export const resetContentDiv = () => {
+    while(contentDiv.hasChildNodes) {
+        contentDiv.removeChild();
+    }
+}
 
 document.addEventListener("DOMContentLoaded", function () {
 const header = document.querySelector('#header');
@@ -13,7 +19,7 @@ const populateNavigationBar = () => {
     const home = document.createElement('li');
     home.innerText = "Home";
     home.classList.add('menu');
-    // home.addEventListener('click', populateHome);
+    home.addEventListener('click', populateHome);
 
     const menu = document.createElement('li');
     menu.innerText = "Menu";
