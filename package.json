@@ -4,7 +4,8 @@
   "description": "Using JavaScript alone to generate the entire contents of the website.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,15 @@
   },
   "homepage": "https://github.com/xarmar/RestaurantPageJS#readme",
   "devDependencies": {
+    "html-webpack-plugin": "^5.3.1",
+    "node-sass": "^6.0.0",
+    "sass-loader": "^12.1.0",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "css-loader": "^5.2.6",
+    "html-loader": "^2.1.2",
+    "style-loader": "^2.0.0"
   }
 }
