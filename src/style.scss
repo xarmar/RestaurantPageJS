@@ -18,6 +18,11 @@ body {
     text-align: center;
 }
 
+@mixin retroBluePadding {
+    padding: 10px;
+    background-color: $retro-blue;
+}
+
 header {
     @include centerEverything();
     padding: 2rem;
@@ -45,45 +50,76 @@ header {
     }
 }
 
-// Content 
+// CONTENT DIV
 #content {
     @include centerEverything();
     background-color: $retro-purple;
     font-family: 'Electrolize', sans-serif;
     width: 90%;
-    background-color: $retro-purple;
+}
+
+// HOME DIV 
+#homeMenuDiv {
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(300px, 1fr));
+    grid-template-rows: auto;
+    margin-top: 2vh;
+    h2 {
+        color: $retro-yellow;
+    }
+    p {
+        @include centerEverything();
+        @include retroBluePadding();
+        width: 80%;
+        margin-bottom: 30px;
+        color: white;
+    }
+    #aboutUsDiv {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    #aboutUsImage {
+        @include centerEverything();
+        margin-top: 20px;
+        margin-bottom: 20px;
+        height: 150px;
+        width: 150px;
+    }
+}
+
+// MENU DIV
+#itemMenuDiv {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-template-rows: auto;
     margin-top: 2vh;
-}
-
-.menuItem {
-    padding: 2rem;
-    margin: 1%;
-    border: 2px solid $retro-violet;
-    h3, p{
-        @include centerEverything();
-        color: white;
-        margin-bottom: 2px;
-        width: 60%;
-    }
-    p {
-        margin-top: 15px;
-    }
-    .drinkImage {
-        height: 200px;
-        width: 200px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    .description {
-        padding: 10px;
-        background-color: $retro-blue;
-    }
-    .price {
-        margin-top:20px;
-        font-size: 200%;
-        color: $retro-yellow;
+    .menuItem {
+        padding: 2rem;
+        margin: 1%;
+        border: 2px solid $retro-violet;
+        h3, p{
+            @include centerEverything();
+            color: white;
+            margin-bottom: 2px;
+            width: 60%;
+        }
+        p {
+            margin-top: 15px;
+        }
+        .drinkImage {
+            height: 200px;
+            width: 200px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .description {
+            @include retroBluePadding();
+        }
+        .price {
+            margin-top:20px;
+            font-size: 200%;
+            color: $retro-yellow;
+        }
     }
 }
