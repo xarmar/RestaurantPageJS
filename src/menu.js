@@ -47,10 +47,13 @@ addToMenuOptionsArray(pizza);
 const contentDiv = document.querySelector('#content');
 
 export const populateMenu = () => {
-    if (!document.querySelector('#itemMenuDiv')) {
+    // if itemMenuDiv already exists in DOM, do not run function
+    if(document.querySelector('#itemMenuDiv')) {
+        return
+    }
+
     const itemMenuDiv = document.createElement('div');
     itemMenuDiv.id = 'itemMenuDiv';
-    }
 
     menuOptions.forEach(option => {
         let menuItem = document.createElement('div');
@@ -74,7 +77,7 @@ export const populateMenu = () => {
         description.classList.add('description');
         description.innerText = option.description;
 
-        // Pice of Menu Option
+        // Price of Menu Option
         let price = document.createElement('p');
         price.classList.add('price');
         price.innerText = `${option.price}€`;
@@ -84,7 +87,8 @@ export const populateMenu = () => {
         menuItem.appendChild(image);
         menuItem.appendChild(description);
         menuItem.appendChild(price); 
-        contentDiv.appendChild(menuItem);
+        itemMenuDiv.appendChild(menuItem);
 
     });
+    contentDiv.appendChild(itemMenuDiv);
 };
