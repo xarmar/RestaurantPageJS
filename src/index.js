@@ -1,16 +1,12 @@
 import "./style.scss";
 import { populateMenu } from '/src/menu.js';
 import { populateHome } from '/src/home.js';
+import { populateContact } from '/src/contact.js';
 
-export const resetContentDiv = () => {
-    while(contentDiv.hasChildNodes) {
-        contentDiv.removeChild();
-    }
-}
+
 
 document.addEventListener("DOMContentLoaded", function () {
 const header = document.querySelector('#header');
-const content = document.querySelector('#content');
 
 const populateNavigationBar = () => {
     // Create List For Navigation Bar
@@ -29,7 +25,7 @@ const populateNavigationBar = () => {
     const contact = document.createElement('li');
     contact.innerText = "Contact";
     contact.classList.add('menu');
-    // contact.addEventListener('click', populateContact);
+    contact.addEventListener('click', populateContact);
 
     // Append Options to Navigation Bar List
     navigationBar.appendChild(home);
@@ -40,6 +36,7 @@ const populateNavigationBar = () => {
 }
 
 populateNavigationBar();
+populateHome();
 
 });
 
