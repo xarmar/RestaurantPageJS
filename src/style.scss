@@ -13,18 +13,25 @@ body {
     background-attachment: fixed;
 }
 
-@mixin centerEverything {
+@mixin centerHorizontally {
     margin: 0px auto 0px auto;
     text-align: center;
 }
 
-@mixin retroBluePadding {
+@mixin retroColorPadding ($color) {
     padding: 10px;
-    background-color: $retro-blue;
+    background-color: $color;
 }
 
+@mixin responsiveGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-rows: auto;
+}
+
+
 header {
-    @include centerEverything();
+    @include centerHorizontally();
     padding: 2rem;
     width: 90%;
     background-color: $retro-purple;
@@ -50,59 +57,61 @@ header {
     }
 }
 
-// CONTENT DIV
+// content Div (Parent)
 #content {
-    @include centerEverything();
+    @include centerHorizontally();
     background-color: $retro-purple;
     font-family: 'Electrolize', sans-serif;
+    font-size: 1em;
     width: 90%;
 }
 
-// HOME DIV 
+// Home Div 
 #homeMenuDiv {
-    display: grid;
-    grid-template-columns: repeat(auto-fit , minmax(300px, 1fr));
-    grid-template-rows: auto;
+    @include responsiveGrid();
     margin-top: 2vh;
     h2 {
         color: $retro-yellow;
     }
     p {
-        @include centerEverything();
-        @include retroBluePadding();
-        width: 80%;
+        @include centerHorizontally();
+        max-width: fit-content;
         margin-bottom: 30px;
         color: white;
     }
     #aboutUsDiv {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        padding: 2%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+    #aboutUsText {
+        @include retroColorPadding($retro-blue);
+    }
+    #imageDiv {
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: 2%;
     }
     #aboutUsImage {
-        @include centerEverything();
-        margin-top: 20px;
-        margin-bottom: 20px;
+        @include centerHorizontally();
         height: 150px;
         width: 150px;
     }
 }
 
-// MENU DIV
+// Menu DIV
 #itemMenuDiv {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-template-rows: auto;
+    @include responsiveGrid();
     margin-top: 2vh;
     .menuItem {
         padding: 2rem;
         margin: 1%;
         border: 2px solid $retro-violet;
         h3, p{
-            @include centerEverything();
+            @include centerHorizontally();
             color: white;
             margin-bottom: 2px;
-            width: 60%;
+            max-width: 60%;
         }
         p {
             margin-top: 15px;
@@ -114,12 +123,23 @@ header {
             margin-bottom: 20px;
         }
         .description {
-            @include retroBluePadding();
+            @include retroColorPadding($retro-blue);
         }
         .price {
             margin-top:20px;
             font-size: 200%;
             color: $retro-yellow;
         }
+    }
+}
+
+// Contact DIV
+#contactMenuDiv {
+    @extend #homeMenuDiv;
+    #locationText {
+        @include retroColorPadding($retro-blue);
+    }
+    #map {
+        margin: 2%;
     }
 }
