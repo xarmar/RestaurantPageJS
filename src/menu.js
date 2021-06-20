@@ -32,9 +32,9 @@ let alabama = new menuOption('Alabama Slammer', 'slammer', 'A popular drink for 
 let frozen = new menuOption('Blue Hawaiian Frozen', 'frozen', 'An amazing blue drink that will take back to the 80s.', 'Blue Curacao, Pinapple Juice, Coconut Cream.', 6);
 let banana = new menuOption('Dirty Banana', 'banana', 'A fun & original rum drink. The perfect cocktail!', 'Vanilla Icecream, Coffee Liqueur, Cream.', 6);
 let beach = new menuOption('Sex On The Beach', 'beach', 'A classic cocktail. May evoke some emotions...', 'Vodka, Peach Schnapps, Cranberry Juice.', 7);
-let nachos = new menuOption('Tasty Nachos', 'nachos', 'Fancy some nachos with salsa? We got your back!', 'Nachos, salta... lots and lots of salsa', 4);
-let nuts = new menuOption('Mixed Nuts', 'nuts', 'Packed with nutrients and good omegas.', 'Just mixed nuts.. from mother nature', 4);
-let waffles = new menuOption('Epic Waffles', 'waffles', 'Waffles and icecream. Does life get any better?', 'Waffles, icecream, chocolate syrup', 5);
+let nachos = new menuOption('Tasty Nachos', 'nachos', 'Fancy some nachos with salsa? We got your back!', 'Nachos, salta... lots and lots of salsa.', 4);
+let nuts = new menuOption('Mixed Nuts', 'nuts', 'Packed with nutrients and good omegas.', 'Just mixed nuts.. from mother nature.', 4);
+let waffles = new menuOption('Epic Waffles', 'waffles', 'Waffles and icecream. Does life get any better?', 'Waffles, icecream, chocolate syrup.', 5);
 let pizza = new menuOption('Pepperoni Pizza', 'pizza', 'Fancy some italian? Try our pepperoni pizza.', 'Pepperoni, cheese, dough, more cheese...', 6);
 
 // Push 'menuOption' Objects to the array 'menuOptions'
