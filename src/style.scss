@@ -29,23 +29,89 @@ body {
     grid-template-rows: auto;
 }
 
+@mixin electrolizeFont {
+    font-family: 'Electrolize', sans-serif;
+}
+
+@mixin chakraFont {
+    font-family: 'Chakra Petch', sans-serif;
+}
+
 
 header {
+    @include chakraFont();
     @include centerHorizontally();
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     padding: 2rem;
-    width: 90%;
+    width: 85%;
     background-color: $retro-purple;
     border-bottom: $retro-violet 4px solid;
+    @media only screen and (max-width: 753px) {
+        justify-content: flex-start;
+        flex-direction: column;
+        text-align: start;
+        width: 90%;
+        padding: 1rem;
+    }
+    #navBar {
+        margin-top: auto;
+        margin-bottom: auto;
+        @media only screen and (max-width: 753px)  {
+            display: none;
+            width: 90%;
+            margin: 0px auto 0px auto;
+        }
+    }
+    #titleHeader {
+        font-size: 1.8em;
+        color: $retro-magenta;
+    }
+    a {
+        display: none;
+        @media only screen and (max-width: 753px) {
+            display: flex;
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            margin-top: auto;
+            margin-bottom: auto;
+            padding-top: 3%;
+            font-size: 2em;
+            text-decoration: none;
+            color: $retro-yellow;
+        }
+    }
+
+    @media only screen and (max-width: 753px) {
+        .showMenu {
+            opacity: 100%;
+            transition-property: opacity;
+            display: flex !important;
+            flex-direction: column;
+            text-align: center;
+            width: 100%;
+            border-top: 2px solid $retro-magenta;
+            border-bottom: 2px solid $retro-magenta;
+
+            /*Animation*/
+            -webkit-transition: opacity 3s ease;
+            -moz-transition: opacity 3s ease;
+                -o-transition: opacity 3s ease;
+            -ms-transition: opacity 3s ease;
+                transition: opacity 3s ease;
+        }
+    }
 }
 
 // Navigation Bar
 .menu {
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 20px;
+    font-size: 1.5em;
     color: white;
     display: inline;
     list-style-type: none;
-    margin: 0px 8% 0px 8%;
+    margin: 0px 20px 0px 20px;
     padding: 1px;
     border: 1px solid transparent;
     &:hover {
@@ -59,10 +125,10 @@ header {
 
 // content Div (Parent)
 #content {
+    @include electrolizeFont();
     @include centerHorizontally();
     justify-items: center;
     background-color: $retro-purple;
-    font-family: 'Electrolize', sans-serif;
     width: 80%;
 }
 
@@ -102,11 +168,11 @@ header {
 
 // Menu DIV
 #itemMenuDiv {
-    @media only screen and (min-width: 701px) {
+    @media only screen and (min-width: 754px) {
         @include responsiveGrid(350px, 1fr);
     }
-    @media only screen and (max-width: 700px) {
-        @include responsiveGrid(180px, 1fr);
+    @media only screen and (max-width: 753px) {
+        @include responsiveGrid(250px, 1fr);
     }
     margin-top: 2vh;
     .menuItem {
@@ -153,17 +219,18 @@ header {
 }
 
 #footer {
-    display: flex;;
+    display: flex;
+    left: 2.5%;
     margin-bottom: 0px;
     position: absolute;
     height: 5%;
-    width: 99%;
+    width: 95%;
     background-color:$retro-blue; 
     text-align: center;
     bottom: 0;
     p {
+        @include electrolizeFont();
         color: white;
-        font-family: 'Electrolize', sans-serif;
         margin-left: auto;
         margin-right: auto;
         align-self: center;
