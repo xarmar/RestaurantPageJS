@@ -3,7 +3,6 @@ require ('/src/home.js');
 require ('/src/contact.js');
 require ('/src/helperFunctions.js');
 
-import "./style.scss";
 import { populateMenu } from '/src/menu.js';
 import { populateHome } from '/src/home.js';
 import { populateContact } from '/src/contact.js';
