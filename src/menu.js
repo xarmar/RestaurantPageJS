@@ -66,7 +66,7 @@ export const populateMenu = () => {
 
         // Image of Menu Option
         let image = document.createElement('img');
-        image.setAttribute('src', `/src/images/${option.imagePath}.png`);
+        image.setAttribute('src', `./src/images/${option.imagePath}.png`);
         image.classList.add("drinkImage");
 
         // Description of Menu Option

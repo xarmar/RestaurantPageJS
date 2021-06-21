@@ -61,7 +61,7 @@ export const populateContact = () => {
     // add image here
     const map = document.createElement('img');
     map.id = 'map';
-    map.setAttribute('src', `/src/images/map.png`);
+    map.setAttribute('src', `./src/images/map.png`);
 
     // Append elements to Content Div
     appendMultipleNodesToParent(locationDiv, locationAddress, locationPostcodeAndCity, locationCountry,map);
