@@ -42,7 +42,7 @@ export const populateHome = () => {
 
     const image = document.createElement('img');
     image.id = 'aboutUsImage';
-    image.setAttribute('src', `../src/images/horizon.png`);
+    image.setAttribute('src', `/src/images/horizon.png`);
     imageDiv.appendChild(image);
 
     appendMultipleNodesToParent(aboutUsDiv, aboutUsHeader, aboutUsText, aboutUsExtraDetails);
