@@ -7,14 +7,30 @@ import "./style.scss";
 import { populateMenu } from '/src/menu.js';
 import { populateHome } from '/src/home.js';
 import { populateContact } from '/src/contact.js';
+import { appendMultipleNodesToParent } from "./helperFunctions";
 
 
 document.addEventListener("DOMContentLoaded", function () {
 const header = document.querySelector('#header');
 
 const populateNavigationBar = () => {
-    // Create List For Navigation Bar
+
+    const titleHeader = document.createElement('h2');
+    titleHeader.id = 'titleHeader';
+    titleHeader.innerText = "Cocktails & Dreams";
+
+    // Create Clicable NavBar for Mobile
+    const dropdown = document.createElement('a');
+    dropdown.innerText = '☰';
+    dropdown.setAttribute('href', '#');
+    dropdown.addEventListener('click', toggleMenu);
+
+    // append titleHeader and dropdown to 'header' div
+    appendMultipleNodesToParent(header, titleHeader, dropdown);
+
+    // Init navigationBar
     const navigationBar = document.createElement('ul');
+    navigationBar.id = 'navBar';
     // Navigation Bar Options
     const home = document.createElement('li');
     home.innerText = "Home";
@@ -32,9 +48,7 @@ const populateNavigationBar = () => {
     contact.addEventListener('click', populateContact);
 
     // Append Options to Navigation Bar List
-    navigationBar.appendChild(home);
-    navigationBar.appendChild(menu);
-    navigationBar.appendChild(contact);
+    appendMultipleNodesToParent(navigationBar, home, menu, contact);
     // Append navigationBar to header
     header.appendChild(navigationBar);
 }
@@ -54,6 +68,11 @@ const populateFooter = () => {
     footer.appendChild(pInfo);
     document.body.appendChild(footer);
 
+}
+
+const toggleMenu = () => {
+    let navBar = document.querySelector('#navBar');
+    navBar.classList.toggle('showMenu');
 }
 
 populateNavigationBar();
