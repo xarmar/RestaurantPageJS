@@ -1,8 +1,14 @@
-import {removeChildNodes, appendMultipleNodesToParent} from './helperFunctions';
+import {removeChildNodes, appendMultipleNodesToParent, closeExpandedMenu} from './helperFunctions';
 
 const contentDiv = document.querySelector('#content');
 
 export const populateContact = () => {
+    
+    // close expanded mobile menu
+    if(document.querySelector('.showMenu')) {
+        closeExpandedMenu();
+    }
+
     // if homeMenuDiv already exists in DOM, do not run function
     if(document.querySelector('#contactMenuDiv')) {
         return
@@ -57,18 +63,11 @@ export const populateContact = () => {
     map.id = 'map';
     map.setAttribute('src', `../src/images/map.png`);
 
+    // Append elements to Content Div
     appendMultipleNodesToParent(locationDiv, locationAddress, locationPostcodeAndCity, locationCountry,map);
-    
     locationDiv.appendChild(locationAdressDiv);
-
-
     contactMenuDiv.appendChild(locationDiv);
     contentDiv.appendChild(contactMenuDiv);
-
-
-    
-
-
 };
 
 
