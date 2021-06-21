@@ -28,7 +28,7 @@ export const populateHome = () => {
 
     const aboutUsExtraDetails = document.createElement('p');
     aboutUsExtraDetails.id = 'aboutUsExtraDetails';
-    aboutUsExtraDetails.innerText = "Come and immerse yourself in the 80s. Lose yourself and immerse yourself in this peculiar decade as you sip on a ice cold cocktail and listen to 80s classics.";
+    aboutUsExtraDetails.innerText = "Come and enjoy yourself in the 80s. Lose yourself and immerse yourself in this peculiar decade as you sip on a ice cold cocktail and listen to 80s classics.";
 
     // Image Div
     const imageDiv = document.createElement('div');
