@@ -72,7 +72,7 @@ header {
         display: none;
         @media only screen and (max-width: 753px) {
             display: flex;
-            position: absolute;
+            position: fixed;
             top: 2rem;
             right: 2rem;
             margin-top: auto;
@@ -86,21 +86,18 @@ header {
 
     @media only screen and (max-width: 753px) {
         .showMenu {
-            opacity: 100%;
-            transition-property: opacity;
+            animation-name: test;
+            animation-duration: 0.75s;
             display: flex !important;
             flex-direction: column;
-            text-align: center;
+            text-align: end;
             width: 100%;
             border-top: 2px solid $retro-magenta;
             border-bottom: 2px solid $retro-magenta;
-
-            /*Animation*/
-            -webkit-transition: opacity 3s ease;
-            -moz-transition: opacity 3s ease;
-                -o-transition: opacity 3s ease;
-            -ms-transition: opacity 3s ease;
-                transition: opacity 3s ease;
+        }
+        @keyframes test {
+            0% {opacity: 0%};
+            100% {opacity: 100%};
         }
     }
 }
@@ -222,8 +219,8 @@ header {
     display: flex;
     left: 2.5%;
     margin-bottom: 0px;
-    position: absolute;
-    height: 5%;
+    position: fixed;
+    height: 4%;
     width: 95%;
     background-color:$retro-blue; 
     text-align: center;
