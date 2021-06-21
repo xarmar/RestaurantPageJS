@@ -1,4 +1,4 @@
-import {removeChildNodes, appendMultipleNodesToParent} from './helperFunctions';
+import {removeChildNodes, appendMultipleNodesToParent, closeExpandedMenu} from './helperFunctions';
 
 // Init arrray
 let menuOptions = []
@@ -19,14 +19,6 @@ const addToMenuOptionsArray = (...menuOption) => {
     });
 }
 
-const removeMenuFromMenuOptionsArray = (cocktailTitle) => {
-    for (let i = 0; i < menuOptions.length; i++) {
-        if( cocktailTitle === menuOptions[i].title) {
-            menuOptions.splice(i, 1);
-        }
-    }
-}
-
 // Init Menu Objects
 let alabama = new menuOption('Alabama Slammer', 'slammer', 'A popular drink for those who enjoy fruity flavours.', 'Jack Daniels, Amaretto Liqueur, Lemon juice.', 5);
 let frozen = new menuOption('Blue Hawaiian Frozen', 'frozen', 'An amazing blue drink that will take back to the 80s.', 'Blue Curacao, Pinapple Juice, Coconut Cream.', 6);
@@ -43,6 +35,12 @@ addToMenuOptionsArray(alabama, frozen, banana, beach, nachos, nuts, waffles, piz
 const contentDiv = document.querySelector('#content');
 
 export const populateMenu = () => {
+
+    // close expanded mobile menu
+    if(document.querySelector('.showMenu')) {
+        closeExpandedMenu();
+    }
+    
     // if itemMenuDiv already exists in DOM, do not run function
     if(document.querySelector('#itemMenuDiv')) {
         return
