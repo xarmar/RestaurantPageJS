@@ -1,8 +1,14 @@
-import {removeChildNodes, appendMultipleNodesToParent} from './helperFunctions';
+import {removeChildNodes, appendMultipleNodesToParent, closeExpandedMenu} from './helperFunctions';
 
 const contentDiv = document.querySelector('#content');
 
 export const populateHome = () => {
+
+    // close expanded mobile menu
+    if(document.querySelector('.showMenu')) {
+        closeExpandedMenu();
+    }
+
     // if homeMenuDiv already exists in DOM, do not run function
     if(document.querySelector('#homeMenuDiv')) {
         return
@@ -45,8 +51,6 @@ export const populateHome = () => {
 
 
     contentDiv.appendChild(homeMenuDiv);
-
-
 };
 
 
