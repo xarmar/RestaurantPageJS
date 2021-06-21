@@ -23,9 +23,9 @@ body {
     background-color: $color;
 }
 
-@mixin responsiveGrid {
+@mixin responsiveGrid ($min, $max) {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax($min, $max));
     grid-template-rows: auto;
 }
 
@@ -60,15 +60,15 @@ header {
 // content Div (Parent)
 #content {
     @include centerHorizontally();
+    justify-items: center;
     background-color: $retro-purple;
     font-family: 'Electrolize', sans-serif;
-    font-size: 1em;
-    width: 90%;
+    width: 80%;
 }
 
 // Home Div 
 #homeMenuDiv {
-    @include responsiveGrid();
+    @include responsiveGrid(200px, 1fr);
     margin-top: 2vh;
     h2 {
         color: $retro-yellow;
@@ -80,20 +80,21 @@ header {
         color: white;
     }
     #aboutUsDiv {
-        padding: 2%;
-        margin-top: 1%;
-        margin-bottom: 1%;
+        margin: 1%;
     }
     #aboutUsText {
+        width: 95%;
         @include retroColorPadding($retro-blue);
     }
-    #imageDiv {
+    #aboutUsExtraDetails {
+        width: 90%;
+    }
+    #imageDiv { 
         margin-top: auto;
         margin-bottom: auto;
         padding: 2%;
     }
     #aboutUsImage {
-        @include centerHorizontally();
         height: 150px;
         width: 150px;
     }
@@ -101,7 +102,12 @@ header {
 
 // Menu DIV
 #itemMenuDiv {
-    @include responsiveGrid();
+    @media only screen and (min-width: 701px) {
+        @include responsiveGrid(350px, 1fr);
+    }
+    @media only screen and (max-width: 700px) {
+        @include responsiveGrid(180px, 1fr);
+    }
     margin-top: 2vh;
     .menuItem {
         padding: 2rem;
@@ -111,14 +117,14 @@ header {
             @include centerHorizontally();
             color: white;
             margin-bottom: 2px;
-            max-width: 60%;
+            max-width: 70%;
         }
         p {
             margin-top: 15px;
         }
         .drinkImage {
-            height: 200px;
-            width: 200px;
+            height: 150px;
+            width: 150px;
             margin-top: 20px;
             margin-bottom: 20px;
         }
@@ -141,5 +147,31 @@ header {
     }
     #map {
         margin: 2%;
+        width: 55vw;
+        height: auto;
     }
 }
+
+#footer {
+    display: flex;;
+    margin-bottom: 0px;
+    position: absolute;
+    height: 5%;
+    width: 99%;
+    background-color:$retro-blue; 
+    text-align: center;
+    bottom: 0;
+    p {
+        color: white;
+        font-family: 'Electrolize', sans-serif;
+        margin-left: auto;
+        margin-right: auto;
+        align-self: center;
+        justify-content: center;
+        align-content: center;
+    }
+    a {
+        color: white;
+    }
+}
+
