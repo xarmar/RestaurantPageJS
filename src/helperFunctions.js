@@ -10,3 +10,7 @@ export const appendMultipleNodesToParent = (parentNode, ...childNodes) => {
         parentNode.append(child);
     });
 }
+
+export const closeExpandedMenu = () => {
+    navBar.classList.remove('showMenu');
+}
