@@ -5,10 +5,6 @@ module.exports = {
     mode: 'development',
     entry: {
         main: './src/index.js',
-        // home: './src/home.js',
-        // menu: './src/menu.js',
-        // contact: './src/contact.js',
-        // helperFunctions: './src/helperFunctions.js',
     },
     devtool: 'inline-source-map',
     output: {
