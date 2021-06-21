@@ -1,8 +1,12 @@
+require ('/src/menu.js');
+require ('/src/home.js');
+require ('/src/contact.js');
+require ('/src/helperFunctions.js');
+
 import "./style.scss";
 import { populateMenu } from '/src/menu.js';
 import { populateHome } from '/src/home.js';
 import { populateContact } from '/src/contact.js';
-
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -35,8 +39,26 @@ const populateNavigationBar = () => {
     header.appendChild(navigationBar);
 }
 
+const populateFooter = () => {
+    const footer = document.createElement('footer');
+    footer.id = 'footer';
+
+    const pInfo = document.createElement('p');
+    pInfo.textContent = 'Developed by ';
+
+    const linkGithub = document.createElement('a');
+    linkGithub.innerText = 'xarmar';
+    linkGithub.setAttribute('href', 'https://github.com/xarmar');
+
+    pInfo.appendChild(linkGithub);
+    footer.appendChild(pInfo);
+    document.body.appendChild(footer);
+
+}
+
 populateNavigationBar();
 populateHome();
+populateFooter();
 
 });
 
